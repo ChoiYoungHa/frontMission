@@ -64,5 +64,4 @@ public class MainController {
 	public String bookSearch(){
 		return "/book/bookSearch";
 	}
-
 }
