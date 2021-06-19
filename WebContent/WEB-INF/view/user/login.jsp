@@ -17,6 +17,12 @@
         <div class="row" data-aos="fade-in">
             <section class="portfolio section-bg rounded-3 shadow">
                 <div class="col-lg-12 mt-2 mt-lg-0 d-flex align-items-stretch justify-content-center"><div class="m-lg-5"><span class="black center title">Login</span></div></div>
+<<<<<<< HEAD
+=======
+
+                <div class="col-lg-12 mt-2 mt-lg-0 d-flex align-items-stretch justify-content-center"><div class="m-lg-5"><span class="black title center">Login</span></div></div>
+
+>>>>>>> 2dab5eb257837cf485740da2f5e4ffc74c533f59
                 <div class="col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch justify-content-center">
                     <form action="http://3.34.217.193:포트/user-service/login" method="post" role="form" class="php-email-form">
                         <div class="form-group mb-3">

@@ -39,6 +39,14 @@
                 </div>
                 <div class="text-end pr-1">
                     <a style="font-weight: bold" href="javascript:history.back()">뒤로가기</a>
+<<<<<<< HEAD
+=======
+
+                    <a style="font-weight: bold" href="/user/signup.do">회원가입</a>
+                    <br/>
+                    <a style="font-weight: bold" href="/user/finduser.do">ID/비밀번호 찾기</a>
+
+>>>>>>> 2dab5eb257837cf485740da2f5e4ffc74c533f59
                 </div>
             </section>
         </div>

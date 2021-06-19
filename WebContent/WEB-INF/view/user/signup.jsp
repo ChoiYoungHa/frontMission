@@ -22,8 +22,13 @@
 
                         <!-- 학교 이메일 입력 -->
                         <div class="form-group mt-3 mb-3">
+<<<<<<< HEAD
                             <input type="email" class="form-control" name="email" id="email" placeholder="학교 이메일"/>
                             <button type="button" onclick=""
+=======
+                        <div class="form-group mb-3">
+                            <input type="email" class="form-control" name="email" id="email" required placeholder="학교 이메일"/>
+>>>>>>> 2dab5eb257837cf485740da2f5e4ffc74c533f59
                         </div>
 
                         <!-- 학번 입력 -->
@@ -60,7 +65,15 @@
                         <!-- 회원가입 버튼 -->
                         <div class="text-center mt-2">
                             <br/>
+<<<<<<< HEAD
                             <button type="submit" class="btn btnpoly">회원가입</button>
+=======
+<<<<<<< HEAD
+                            <button type="submit" class="btn btnpoly">회원가입</button>
+=======
+                            <button type="submit" class="btn btnpoly">Signup</button>
+>>>>>>> 9e8e9cdb4c23f8a1bb4d014b69564d33adae7dc7
+>>>>>>> 2dab5eb257837cf485740da2f5e4ffc74c533f59
                         </div>
                     </form>
                 </div>

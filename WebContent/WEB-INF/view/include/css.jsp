@@ -29,6 +29,11 @@
 
 <!-- Template Main CSS File -->
 <link href="/resource/assets/css/style.css?ver=2" rel="stylesheet" />
+<<<<<<< HEAD
+=======
+<link href="/resource/assets/css/style.css?ver=1" rel="stylesheet" />
+>>>>>>> 2dab5eb257837cf485740da2f5e4ffc74c533f59
+
 
 <style>
 

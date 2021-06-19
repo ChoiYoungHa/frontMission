@@ -53,4 +53,15 @@ public class MainController {
 	public String chgPw() {
 		return "/user/chgpw";
 	}
+
+	//메인페이지
+	@RequestMapping(value = "/main")
+	public String main(){
+		return "/main";
+	}
+
+	@RequestMapping(value = "/book/bookSearch")
+	public String bookSearch(){
+		return "/book/bookSearch";
+	}
 }
