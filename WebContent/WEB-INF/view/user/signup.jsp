@@ -16,8 +16,8 @@
         <h1 class="section-title shadowyl">PolyLibrary</h1>
         <div class="row" data-aos="fade-in">
             <section class="portfolio section-bg rounded-3 shadow">
-                <div class="col-lg-12 mt-2 mt-lg-0 d-flex align-items-stretch justify-content-center"><div class="m-lg-5"><span class="black title center">Signup</span></div></div>
-                <div class="col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch justify-content-center">
+                <div class="col-lg-12 d-flex align-items-stretch justify-content-center"><span class="black title center">Signup</span></div>
+                <div class="col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch justify-content-center mt-5">
                     <form action="http://3.34.217.193:포트/user-service/login" method="post" role="form" class="php-email-form">
 
                         <!-- 학교 이메일 입력 -->
@@ -35,6 +35,7 @@
                             <input type="text" class="form-control" name="name" id="name" required placeholder="이름"/>
                         </div>
 
+
                         <!-- 비밀번호 입력 -->
                         <div class="form-group mb-3">
                             <input type="text" class="form-control" name="pwd" id="pwd" required placeholder="비밀번호"/>
@@ -43,6 +44,16 @@
                         <!-- 비밀번호 확인 name값 확인 -->
                         <div class="form-group mb-3">
                             <input type="text" class="form-control" name="pwd2" id="pwd2" required placeholder="비밀번호"/>
+                        </div>
+
+                        <!-- 전공 -->
+                        <div class="form-group mb-3">
+                            <input type="text" class="form-control" name="department" id="department" required placeholder="전공"/>
+                        </div>
+
+                        <!-- 닉네임 -->
+                        <div class="form-group mb-3">
+                            <input type="text" class="form-control" name="nickname" id="nickname" required placeholder="닉네임"/>
                         </div>
 
                         <!-- 회원가입 버튼 -->
