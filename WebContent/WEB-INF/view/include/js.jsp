@@ -14,3 +14,10 @@
 
 <!-- jquery (cdn 사용) -->
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script type="text/javascript">
+    // 학번에 숫자 형태만 입력되도록 함수 작성(numberOnly=true 속성)
+    $(document).on("keyup", "input:text[numberOnly]", function() {
+        $(this).val( $(this).val().replace(/[^0-9]/gi,"") );
+    });
+</script>

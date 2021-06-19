@@ -29,7 +29,6 @@
 
 <!-- Template Main CSS File -->
 <link href="/resource/assets/css/style.css?ver=2" rel="stylesheet" />
-<link href="/resource/assets/css/style.css?ver=1" rel="stylesheet" />
 
 
 <style>
