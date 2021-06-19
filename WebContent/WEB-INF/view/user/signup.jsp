@@ -21,7 +21,7 @@
                     <form action="http://3.34.217.193:포트/user-service/login" method="post" role="form" class="php-email-form">
 
                         <!-- 학교 이메일 입력 -->
-                        <div class="form-group mt-3 mb-3">
+                        <div class="form-group mt-3 mb-3"></div>
                         <div class="form-group mb-3">
                             <input type="email" class="form-control" name="email" id="email" required placeholder="학교 이메일"/>
                         </div>
@@ -60,15 +60,11 @@
                         <!-- 회원가입 버튼 -->
                         <div class="text-center mt-2">
                             <br/>
-<<<<<<< HEAD
                             <button type="submit" class="btn btnpoly">회원가입</button>
-=======
                             <button type="submit" class="btn btnpoly">Signup</button>
->>>>>>> 9e8e9cdb4c23f8a1bb4d014b69564d33adae7dc7
                         </div>
                     </form>
                 </div>
-
                 <!-- a태그 회원일 경우 로그인 링크 -->
                 <div class="text-end">
                     <a style="font-weight: bold" href="/user/login.do">로그인</a>
