@@ -30,6 +30,7 @@ public class MainController {
 		return "/user/signup";
 	}
 
+	//메인페이지
 	@RequestMapping(value = "/main")
 	public String main(){
 		return "/main";
