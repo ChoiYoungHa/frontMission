@@ -22,7 +22,7 @@
 
                         <!-- 학교 이메일 입력 -->
                         <div class="form-group mt-3 mb-3">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="학교 이메일"/>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="학교 이메일" />
                         </div>
 
                         <!-- 학번 입력 -->
@@ -46,21 +46,35 @@
                             <input type="text" class="form-control" name="pwd2" id="pwd2"placeholder="비밀번호 확인"/>
                         </div>
 
-                        <!-- 전공 -->
-                        <div class="form-group mb-3">
-                            <input type="text" class="form-control" name="department" id="department" placeholder="전공"/>
-                        </div>
-
                         <!-- 닉네임 -->
                         <div class="form-group mb-3">
                             <input type="text" class="form-control" name="nickname" id="nickname"placeholder="닉네임"/>
                         </div>
+
+                        <!-- 전공 -->
+                        <div class="form-group mb-3">
+                            <select id="department" name="department">
+                                <option value="" selected disabled>=전공 선택=</option>
+                                <option value="데이터분석과">데이터분석과</option>
+                                <option value="디지털콘텐츠과">디지털콘텐츠과</option>
+                                <option value="의료정보과">의료정보과</option>
+                                <option value="주얼리디자인과">주얼리디자인과</option>
+                                <option value="i-패션디자인과">i-패션디자인과</option>
+                                <option value="패션산업과">패션산업과</option>
+                                <option value="전문기술과정">전문기술과정</option>
+                                <option value="하이테크과정">하이테크과정</option>
+                                <option value="신중년특화과정">신중년특화과정</option>
+                                <option value="여성재취업과정">여성재취업과정</option>
+                            </select>
+                        </div>
+
 
                         <!-- 회원가입 버튼 -->
                         <div class="text-center mt-2">
                             <br/>
                             <button type="submit" class="btn btnpoly">회원가입</button>
                         </div>
+
                     </form>
                 </div>
                 <!-- a태그 회원일 경우 로그인 링크 -->

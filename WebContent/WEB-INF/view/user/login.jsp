@@ -18,9 +18,10 @@
             <section class="portfolio section-bg rounded-3 shadow">
                 <div class="col-lg-12 mt-2 mt-lg-0 d-flex align-items-stretch justify-content-center"><div class="m-lg-5"><span class="black center title">Login</span></div></div>
                 <div class="col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch justify-content-center">
-                    <form action="http://3.34.217.193:포트/user-service/login" method="post" role="form" class="php-email-form">
+                    <form action="http://3.34.217.193:포트/user-service/login" method="post" role="form" onsubmit="return loginChk()">
                         <div class="form-group mb-3">
-                            <input type="text" class="form-control" name="Email" id="Email" placeholder="학교 이메일"/>
+                            <input type="text" class="form-control" name="email" id="email" placeholder="학교 이메일" onkeyup="emailChk()"/>
+                            <div id="emchk"></div>
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control" name="password" id="password" placeholder="비밀번호"/>

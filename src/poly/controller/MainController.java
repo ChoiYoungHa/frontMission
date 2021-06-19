@@ -30,12 +30,6 @@ public class MainController {
 		return "/user/signup";
 	}
 
-	@RequestMapping(value="/user/findpw")
-	public String findPw() { return "/user/findpw"; }
-
-	@RequestMapping(value="/user/findid")
-	public String findId() { return "/user/findid"; }
-
 	// 회원 찾기 jsp
 	@RequestMapping(value="/user/finduser")
 	public String findUser() {

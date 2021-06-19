@@ -10,6 +10,9 @@
         rel="stylesheet"
 />
 
+<!-- sweet alert2 -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <!-- Vendor CSS Files -->
 <link href="/resource/assets/vendor/aos/aos.css" rel="stylesheet" />
 <link
@@ -30,7 +33,5 @@
 <!-- Template Main CSS File -->
 <link href="/resource/assets/css/style.css?ver=2" rel="stylesheet" />
 
-
-<style>
-
-</style>
+<!-- select box css -->
+<link href="/resource/assets/css/nice-select.css" rel="stylesheet" />
