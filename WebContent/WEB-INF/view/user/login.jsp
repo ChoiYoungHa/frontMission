@@ -30,11 +30,7 @@
                         </div>
                         <div class="text-center mt-2">
                             <br/>
-<<<<<<< HEAD
                             <button type="submit" class="btn btnpoly">로그인</button>
-=======
-                            <button type="submit" class="btn btnpoly white">Login</button>
->>>>>>> 9e8e9cdb4c23f8a1bb4d014b69564d33adae7dc7
                         </div>
                     </form>
                 </div>
