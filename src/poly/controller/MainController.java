@@ -18,11 +18,13 @@ public class MainController {
 		return "/index";
 	}
 
+	// 로그인 jsp
 	@RequestMapping(value = "/user/login")
 	public String login(HttpServletRequest request) {
 		return "/user/login";
 	}
 
+	// 회원가입 jsp
 	@RequestMapping(value = "/user/signup")
 	public String signUp(){
 		return "/user/signup";
@@ -33,4 +35,22 @@ public class MainController {
 
 	@RequestMapping(value="/user/findid")
 	public String findId() { return "/user/findid"; }
+
+	// 회원 찾기 jsp
+	@RequestMapping(value="/user/finduser")
+	public String findUser() {
+		return "/user/finduser";
+	}
+
+	// 인증번호 입력 jsp
+	@RequestMapping(value="/user/pwcheck")
+	public String pwCheck() {
+		return "/user/pwcheck";
+	}
+
+	// 비밀번호 변경 jsp
+	@RequestMapping(value="/user/chgpw")
+	public String chgPw() {
+		return "/user/chgpw";
+	}
 }
