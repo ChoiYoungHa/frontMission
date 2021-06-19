@@ -265,6 +265,12 @@ h6 {
   background-size: cover;
 }
 
+.blog__details__profile {
+  background: #f5f5f5;
+  padding: 50px;
+  margin-bottom: 55px;
+}
+
 #hero:before {
   content: "";
   background: rgba(5, 13, 24, 0.3);
