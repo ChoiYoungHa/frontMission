@@ -30,17 +30,6 @@ public class MainController {
 		return "/user/signup";
 	}
 
-	//메인페이지
-	@RequestMapping(value = "/main")
-	public String main(){
-		return "/main";
-	}
-
-	@RequestMapping(value = "/book/bookSearch")
-	public String bookSearch(){
-		return "/book/bookSearch";
-	}
-
 	@RequestMapping(value="/user/findpw")
 	public String findPw() { return "/user/findpw"; }
 
@@ -64,4 +53,16 @@ public class MainController {
 	public String chgPw() {
 		return "/user/chgpw";
 	}
+
+	//메인페이지
+	@RequestMapping(value = "/main")
+	public String main(){
+		return "/main";
+	}
+
+	@RequestMapping(value = "/book/bookSearch")
+	public String bookSearch(){
+		return "/book/bookSearch";
+	}
+
 }
