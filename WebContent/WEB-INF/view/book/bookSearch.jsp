@@ -8,54 +8,58 @@
 <body>
 <!-- ======= Mobile nav toggle button ======= -->
 <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
-
 <!-- ======= Header ======= -->
-<header id="header">
-    <div class="d-flex flex-column">
-        <div class="profile">
-            <h1 class="text-light"><a href="index.html">Polibrary</a></h1>
-            <div class="social-links mt-3 text-center">
-                <h2>유저닉네임</h2>
+<%@include file="../include/header.jsp"%>
+
+<main id="main">
+<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact" style="z-index: 1; width: 600px">
+        <div class="container">
+            <div class="row" data-aos="fade-in">
+                <div class="col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch">
+                   <div class="php-email-form">
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="keyword">검색</label>
+                                <input type="text" name="keyword" class="form-control" id="keyword" required placeholder="책 이름 또는 저자를 검색해보세요"/>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-primary" onclick="getBookInfo()">검색</button>
+                        </div>
+                        <div id="searchResult"></div>
+                   </div>
+                </div>
             </div>
         </div>
-        <nav id="navbar" class="nav-menu navbar">
-            <ul>
-                <li>
-                    <a href="#hero" class="nav-link scrollto active"
-                    ><i class="bx bx-home"></i> <span>Home</span></a
-                    >
-                </li>
-                <li>
-                    <a href="#about" class="nav-link scrollto"
-                    ><i class="bx bx-user"></i> <span>About</span></a
-                    >
-                </li>
-                <li>
-                    <a href="#resume" class="nav-link scrollto"
-                    ><i class="bx bx-file-blank"></i> <span>Resume</span></a
-                    >
-                </li>
-                <li>
-                    <a href="#portfolio" class="nav-link scrollto"
-                    ><i class="bx bx-book-content"></i> <span>Portfolio</span></a
-                    >
-                </li>
-                <li>
-                    <a href="#services" class="nav-link scrollto"
-                    ><i class="bx bx-server"></i> <span>Services</span></a
-                    >
-                </li>
-                <li>
-                    <a href="#contact" class="nav-link scrollto"
-                    ><i class="bx bx-envelope"></i> <span>Contact</span></a
-                    >
-                </li>
-            </ul>
-        </nav>
-        <!-- .nav-menu -->
-    </div>
-</header>
+    </section>
+</section>
+</main>
+
 <!-- End Header -->
 <%@include file="../include/js.jsp" %>
+<script type="text/javascript">
+    function getBookInfo(){
+        let keyword = document.getElementById("keyword");
+        let searchResult = document.getElementById("searchResult");
+        let html = "";
+
+        let value = keyword.value;
+
+        $.ajax({
+            url : "http://ipaddress:port/book-service/books/list",
+            type: "get",
+            data : {
+                "keyword" : value
+            },
+            dataType : "json",
+            success : function (data){
+                console.log("검색결과 : " + data);
+                // object에 담겨진 데이터 구조에 접근해서 html에 담아 뿌리기
+            }
+        })
+    }
+</script>
 </body>
 </html>

@@ -16,10 +16,6 @@
   font-size: 55px;
   font-weight: bold;
   text-shadow: #bfb5b5 2px 0 10px;
-<<<<<<< HEAD
-=======
-
->>>>>>> 2dab5eb257837cf485740da2f5e4ffc74c533f59
 }
 
 .black {
@@ -267,6 +263,12 @@ h6 {
   height: 100vh;
   background: url("../img/paper-1074131.jpg") top center;
   background-size: cover;
+}
+
+.blog__details__profile {
+  background: #f5f5f5;
+  padding: 50px;
+  margin-bottom: 55px;
 }
 
 #hero:before {
