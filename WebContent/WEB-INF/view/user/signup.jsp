@@ -27,7 +27,7 @@
 
                         <!-- 학번 입력 -->
                         <div class="form-group mb-3">
-                            <input type="text" class="form-control" name="studentId" id="studentId" numberOnly="true" placeholder="학번"/>
+                            <input type="text" class="form-control" name="studentId" id="studentId" numberOnly="true" placeholder="학번" onfocusout="StudentIdCheck()"/>
                         </div>
 
                         <!-- 이름 입력 -->
@@ -68,13 +68,11 @@
                             </select>
                         </div>
 
-
                         <!-- 회원가입 버튼 -->
                         <div class="text-center mt-2">
                             <br/>
                             <button type="submit" class="btn btnpoly">회원가입</button>
                         </div>
-
                     </form>
                 </div>
                 <!-- a태그 회원일 경우 로그인 링크 -->
@@ -90,18 +88,27 @@
 <script type="text/javascript">
 
     function signupValid() {
-
         //이메일 정규식
         var emailJ = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
 
         if (emailJ.test($("#email").val()) == false
             || ($("#password").val() != $("#password2").val())) {
-
             alert('입력한 정보를 다시 한 번 확인해 주세요');
-
             return false;
         }
+    }
+    function StudentIdCheck() {
+        let studentId = document.getElementById("studentId").value;
 
+            //ajax 호출
+            $.ajax({
+                //function을 실행할 url
+                url : "http://3.35.142.240:8000/user-service/users/"+ studentId + "/check",
+                type : "get",
+                success : function(data) {
+                    Swal.fire(data, '', 'success');
+                }
+            })
     }
 </script>
 </body>

@@ -15,7 +15,7 @@ public class MainController {
 	public String Index() {
 		log.info(this.getClass());
 
-		return "/index";
+		return "/user/login";
 	}
 
 	// 로그인 jsp
@@ -53,6 +53,7 @@ public class MainController {
 	public String main(){
 		return "/main";
 	}
+
 
 	@RequestMapping(value = "/book/bookSearch")
 	public String bookSearch(){

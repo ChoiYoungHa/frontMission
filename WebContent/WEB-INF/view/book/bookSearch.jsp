@@ -46,7 +46,7 @@
         let html = "";
 
         let value = keyword.value;
-
+        // 프리로더 reloading_st();
         $.ajax({
             url : "http://ipaddress:port/book-service/books/list",
             type: "get",
@@ -60,6 +60,26 @@
             }
         })
     }
+
+    document.querySelector('#keyword').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+           // 프리로더 reloading_st();
+            let keyword =$("#keyword").val();
+            let search = "";
+
+            $.ajax({
+                url : `http://openapi.foodsafetykorea.go.kr/api/d5388ab1d4d546a6b033/I2790/json/1/100/`+search+"="+keyword,
+                type : "get",
+                success : function(data) {
+                    // 원하는 음식이 안나올 수 있어서 최대한 많은 데이터를 가져오고 페이징을 해야함.
+                    // 각 요소마다 클릭되면 데이터가 저장될 수 있게 해야함.
+                    loading_ed();
+                    paging(data.I2790.row.length, 1, data);
+                }
+            })
+        }
+    });
+
 </script>
 </body>
 </html>
