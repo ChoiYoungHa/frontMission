@@ -39,11 +39,4 @@
         }
     }
 
-    function loginChk() {
-        if (emailJ.test($(email).val()) == false || (("#password") == false)) {
-            Swal.fire('PolyLibrary','입력한 정보를 다시 한 번 확인해 주세요!','warning');
-            return false;
-        }
-
-     }
 </script>

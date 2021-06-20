@@ -12,7 +12,10 @@
 </style>
 </head>
 <body>
-와! 스프링 아시는구나!
-참고로 겁.나.어.렵.습.니.다
+<a href="/user/login.do">로그인</a>
+<a href="/user/signup.do">회원가입</a>
+<a href="/user/finduser.do">ID/비밀번호 찾기</a>
+<a href="/user/pwcheck.do">인증번호 입력</a>
+<a href="/user/chgpw.do">비밀번호 찾기</a>
 </body>
 </html>

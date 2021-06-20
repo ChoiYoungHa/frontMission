@@ -13,7 +13,7 @@
 <body>
 <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
-        <h1 class="section-title shadowyl">PolyLibrary</h1>
+        <h1 class="section-title shadowyl center">Polibrary</h1>
         <div class="row" data-aos="fade-in">
             <section class="portfolio section-bg rounded-3 shadow">
 
@@ -59,8 +59,7 @@
                         <span class="black center title">Find PW</span>
                     </div>
                 <div class="col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch justify-content-center">
-                    <form action="http://3.34.217.193:포트/user-service/users/authByEmail" method="get" role="form"
-                          >
+                    <form action="http://3.34.217.193:포트/user-service/users/authByEmail" method="get" role="form">
                         <!-- 비밀번호 찾기를 위한 학번 입력란 -->
 
                             <div class="form-group mb-3 center">
@@ -75,7 +74,7 @@
                             <!-- 제출(비밀번호 찾기) -->
                             <div class="text-center mt-2">
                                 <br/>
-                                <input type="submit" class="btn btnpoly">비밀번호 찾기</input>
+                                <input type="submit" class="btn btnpoly" value="비밀번호 찾기"/>
                             </div>
 
                     </form>

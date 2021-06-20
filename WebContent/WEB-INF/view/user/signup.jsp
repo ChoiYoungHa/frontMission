@@ -13,12 +13,12 @@
 <body>
 <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
-        <h1 class="section-title shadowyl">PolyLibrary</h1>
+        <h1 class="section-title shadowyl center">Polibrary</h1>
         <div class="row" data-aos="fade-in">
             <section class="portfolio section-bg rounded-3 shadow">
                 <div class="col-lg-12 d-flex align-items-stretch justify-content-center"><span class="black title center">Signup</span></div>
                 <div class="col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch justify-content-center mt-5">
-                    <form action="http://3.34.217.193:포트/user-service/login" method="post" role="form" class="php-email-form" onsubmit="return signupValid()">
+                    <form action="http://3.35.142.240:8000/user-service/users" method="post" role="form" onsubmit="return signupValid()">
 
                         <!-- 학교 이메일 입력 -->
                         <div class="form-group mt-3 mb-3">
@@ -38,12 +38,12 @@
 
                         <!-- 비밀번호 입력 -->
                         <div class="form-group mb-3">
-                            <input type="text" class="form-control" name="pwd" id="pwd" placeholder="비밀번호"/>
+                            <input type="password" class="form-control" name="pwd" id="pwd" placeholder="비밀번호"/>
                         </div>
 
                         <!-- 비밀번호 확인 name값 확인 -->
                         <div class="form-group mb-3">
-                            <input type="text" class="form-control" name="pwd2" id="pwd2"placeholder="비밀번호 확인"/>
+                            <input type="password" class="form-control" name="pwd2" id="pwd2" placeholder="비밀번호 확인"/>
                         </div>
 
                         <!-- 닉네임 -->
@@ -94,8 +94,8 @@
         //이메일 정규식
         var emailJ = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
 
-        if (emailJ.test($("#email").val()) == false || nameJ.test($("#name").val()) == false
-            || ($("#password").val() != $("#password2").val()) || pwJ.test($(pwd1).val()) == false) {
+        if (emailJ.test($("#email").val()) == false
+            || ($("#password").val() != $("#password2").val())) {
 
             alert('입력한 정보를 다시 한 번 확인해 주세요');
 
