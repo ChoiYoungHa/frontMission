@@ -192,6 +192,24 @@ h6 {
   white-space: nowrap;
 }
 
+.col-4 {
+  width: 25%;
+}
+.btn.btnpoly.update{
+  padding: 0px;
+  background-color: yellow;
+}
+.btn.btnpoly.delete{
+  padding: 0px;
+  background-color: red;
+  color: white;
+}
+.col-4.update{
+  width: 12.5%;
+}
+.col-4.delete{
+  width: 12.5%;
+}
 .nav-menu a,
 .nav-menu a:focus {
   display: flex;

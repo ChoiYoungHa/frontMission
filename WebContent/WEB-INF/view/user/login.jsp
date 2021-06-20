@@ -18,17 +18,17 @@
             <section class="portfolio section-bg rounded-3 shadow">
                 <div class="col-lg-12 mt-2 mt-lg-0 d-flex align-items-stretch justify-content-center"><div class="m-lg-5"><span class="black center title">Login</span></div></div>
                 <div class="col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch justify-content-center">
-                    <form action="http://3.35.142.240:8000/user-service/login" method="post" role="form" onsubmit="return loginChk()">
+                    <form action="http://poly-library.com/user-service/login" method="post" role="form" onsubmit="return false;">
                         <div class="form-group mb-3">
                             <input type="text" class="form-control" name="email" id="email" placeholder="학교 이메일" onkeyup="emailChk()"/>
                             <div id="emchk"></div>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="password" id="password" placeholder="비밀번호"/>
+                            <input type="password" class="form-control" name="password" id="password" placeholder="비밀번호"/>
                         </div>
                         <div class="text-center mt-2">
                             <br/>
-                            <button type="submit" class="btn btnpoly">로그인</button>
+                            <button type="submit" class="btn btnpoly" onclick="loginRequest()">로그인</button>
                         </div>
                     </form>
                 </div>
@@ -60,7 +60,30 @@
             $("#password").focus();
             return false;
         }
+    }
 
+    function loginRequest(){
+        loginChk();
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        $.ajax({
+            url: "http://poly-library.com/user-service/login",
+            type: "post",
+            data : JSON.stringify({
+                "email": email,
+                "password": password
+            }),
+            dataType: "json",
+            contentType: "application/json",
+            success: function (data) {
+                console.log(data.userUuid);
+                sessionStorage.setItem("id", data.userUuid);
+                location.href = "/main.do"
+            }, error: function (error){
+                Swal.fire("로그인에 실패했습니다.", '', 'error');
+            }
+        })
     }
 </script>
 </body>

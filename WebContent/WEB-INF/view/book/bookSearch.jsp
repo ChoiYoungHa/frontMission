@@ -28,8 +28,27 @@
                         <div class="text-center">
                             <button class="btn btn-primary" onclick="getBookInfo()">검색</button>
                         </div>
-                        <div id="searchResult"></div>
                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= Contact Section ======= -->
+    <section id="result" class="contact" style="z-index: 100;overflow-y: auto;padding: 0px;margin: 45px;">
+        <div class="container">
+            <div class="row" data-aos="fade-in">
+                <div class="col-lg-12 d-flex align-items-stretch">
+                    <div class="info" id="searchResult" style="width: 800px">
+
+<%--                        <div class="address font-weight-bold">--%>
+<%--                            <i class="bi bi-geo-alt"></i>--%>
+<%--                            <h4>Location:</h4>--%>
+<%--                            <h5>A108 Adam Street, New York, NY 535022</h5>--%>
+<%--                        </div>--%>
+
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -46,11 +65,19 @@
 
         // 프리로더 reloading_st();
         $.ajax({
-            url : "http://3.35.142.240/book-service/books/list?keyword="+keyword,
+            url : "http://poly-library.com/book-service/books/list?keyword="+keyword,
             type: "get",
-            dataType : "json",
             success : function (data){
                 console.log(data);
+                for (let i = 0; i < data.length; i++) {
+                    html += '<div class="address font-weight-bold row justify-content-between mb-4">'+
+                        '<div class="col-2"><img class="bi bi-geo-alt" src="'+ data[i].thumbnail +'" style="width: 100px; height: 100px"></div>'+
+                        ' <div class="col-10"><h4 style="padding:0px;">' +data[i].title +'</h4>'+
+                        ' <h6> ' +data[i].author + '</h6></div>' +
+                        '</div>'
+                }
+
+                $("#searchResult").html(html);
             }
         })
     }
@@ -63,14 +90,18 @@
 
             // 프리로더 reloading_st();
             $.ajax({
-                url : "http://3.35.142.240/book-service/books/list?keyword="+keyword,
+                url : "http://poly-library.com/book-service/books/list?keyword="+keyword,
                 type: "get",
-                data : {
-                    "keyword" : keyword
-                },
-                dataType : "json",
                 success : function (data){
                     console.log(data);
+                    for (let i = 0; i < data.length; i++) {
+                        html += '<div class="address font-weight-bold row justify-content-between mb-4">'+
+                            '<div class="col-2"><img class="bi bi-geo-alt" src="'+ data[i].thumbnail +'" style="width: 100px; height: 100px"></div>'+
+                            ' <div class="col-10"><h4 style="padding:0px;">' +data[i].title +'</h4>'+
+                            ' <h6> ' +data[i].author + '</h6></div>' +
+                            '</div>'
+                    }
+                    $("#searchResult").html(html);
                 }
             })
         }

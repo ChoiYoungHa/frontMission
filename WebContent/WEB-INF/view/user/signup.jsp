@@ -18,7 +18,7 @@
             <section class="portfolio section-bg rounded-3 shadow">
                 <div class="col-lg-12 d-flex align-items-stretch justify-content-center"><span class="black title center">Signup</span></div>
                 <div class="col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch justify-content-center mt-5">
-                    <form action="http://3.35.142.240/user-service/users" method="post" role="form" onsubmit="return false;">
+                    <form role="form" onsubmit="return false;">
 
                         <!-- 학교 이메일 입력 -->
                         <div class="form-group mt-3 mb-3">
@@ -71,7 +71,7 @@
                         <!-- 회원가입 버튼 -->
                         <div class="text-center mt-2">
                             <br/>
-                            <button type="submit" class="btn btnpoly" onclick="signupRequest()">회원가입</button>
+                            <button type="button" class="btn btnpoly" onclick="signupRequest()">회원가입</button>
                         </div>
                     </form>
                 </div>
@@ -83,7 +83,6 @@
         </div>
     </div>
 </section>
-
 <%@include file="../include/js.jsp" %>
 <script type="text/javascript">
 
@@ -106,24 +105,37 @@
         let name = document.getElementById("name").value;
         let pwd = document.getElementById("pwd").value;
         let nickname = document.getElementById("nickname").value;
-        let department = document.getElementById("department").value;
+        let department = $("#department option:selected").val();
+
+        console.log(typeof(email));
+        console.log(typeof(studentId));
+        console.log(typeof(name));
+        console.log(typeof(pwd));
+        console.log(typeof(nickname));
+        console.log(typeof(department));
+
 
         $.ajax({
-            url: "http://3.35.142.240/user-service/users",
+            url: "http://poly-library.com/user-service/users",
             type: "post",
-            data : {
+            data : JSON.stringify({
                 "email": email,
                 "studentId": studentId,
                 "name" : name,
                 "pwd" : pwd,
                 "nickname": nickname,
                 "department": department
-            },
+            }),
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
                 console.log(data);
-            }
+                Swal.fire("회원가입에 성공하였습니다.", '', 'success');
+                location.href = "/index.do"
+            }, error: function(error){
+                console.log(error);
+                Swal.fire("학번과 메일 앞자리를 확인해주세요.", '', 'error');
+            },
         })
     }
 
@@ -132,14 +144,13 @@
             //ajax 호출
             $.ajax({
                 //function을 실행할 url
-                url : "http://3.35.142.240/user-service/users/"+studentId+"/check",
+                url : "http://poly-library.com/user-service/users/"+studentId+"/check",
                 type : "get",
                 success : function(data) {
                     Swal.fire(data.msg, '', 'success');
                 }
             })
     }
-
 
 </script>
 </body>
