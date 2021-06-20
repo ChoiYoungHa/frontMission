@@ -18,7 +18,7 @@
             <section class="portfolio section-bg rounded-3 shadow">
                 <div class="col-lg-12 d-flex align-items-stretch justify-content-center"><span class="black title center">Signup</span></div>
                 <div class="col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch justify-content-center mt-5">
-                    <form action="http://3.35.142.240:8000/user-service/users" method="post" role="form" onsubmit="return signupValid()">
+                    <form action="http://3.35.142.240/user-service/users" method="post" role="form" onsubmit="return false;">
 
                         <!-- 학교 이메일 입력 -->
                         <div class="form-group mt-3 mb-3">
@@ -41,10 +41,10 @@
                             <input type="password" class="form-control" name="pwd" id="pwd" placeholder="비밀번호"/>
                         </div>
 
-                        <!-- 비밀번호 확인 name값 확인 -->
-                        <div class="form-group mb-3">
-                            <input type="password" class="form-control" name="pwd2" id="pwd2" placeholder="비밀번호 확인"/>
-                        </div>
+<%--                        <!-- 비밀번호 확인 name값 확인 -->--%>
+<%--                        <div class="form-group mb-3">--%>
+<%--                            <input type="password" class="form-control" name="pwd2" id="pwd2" placeholder="비밀번호 확인"/>--%>
+<%--                        </div>--%>
 
                         <!-- 닉네임 -->
                         <div class="form-group mb-3">
@@ -71,7 +71,7 @@
                         <!-- 회원가입 버튼 -->
                         <div class="text-center mt-2">
                             <br/>
-                            <button type="submit" class="btn btnpoly">회원가입</button>
+                            <button type="submit" class="btn btnpoly" onclick="signupRequest()">회원가입</button>
                         </div>
                     </form>
                 </div>
@@ -97,19 +97,50 @@
             return false;
         }
     }
+
+    function signupRequest(){
+
+        signupValid();
+        let email = document.getElementById("email").value;
+        let studentId = document.getElementById("studentId").value;
+        let name = document.getElementById("name").value;
+        let pwd = document.getElementById("pwd").value;
+        let nickname = document.getElementById("nickname").value;
+        let department = document.getElementById("department").value;
+
+        $.ajax({
+            url: "http://3.35.142.240/user-service/users",
+            type: "post",
+            data : {
+                "email": email,
+                "studentId": studentId,
+                "name" : name,
+                "pwd" : pwd,
+                "nickname": nickname,
+                "department": department
+            },
+            dataType: "json",
+            contentType: "application/json",
+            success: function (data) {
+                console.log(data);
+            }
+        })
+    }
+
     function StudentIdCheck() {
         let studentId = document.getElementById("studentId").value;
-
             //ajax 호출
             $.ajax({
                 //function을 실행할 url
-                url : "http://3.35.142.240:8000/user-service/users/"+ studentId + "/check",
+                url : "http://3.35.142.240/user-service/users/"+studentId+"/check",
                 type : "get",
                 success : function(data) {
-                    Swal.fire(data, '', 'success');
+                    Swal.fire(data.msg, '', 'success');
                 }
             })
     }
+
+
 </script>
 </body>
 </html>
