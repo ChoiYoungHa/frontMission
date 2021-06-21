@@ -64,6 +64,7 @@
 
     function loginRequest(){
         loginChk();
+
         let email = document.getElementById("email").value;
         let password = document.getElementById("password").value;
 
@@ -77,7 +78,11 @@
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
+                console.log(data)
                 console.log(data.userUuid);
+                if (data.userUuid == "edc0475e-3685-43ca-97c6-3b75aeae9c7f"){
+                    location.href = "/admin/adminhome.do";
+                }
                 sessionStorage.setItem("id", data.userUuid);
                 location.href = "/main.do"
             }, error: function (error){

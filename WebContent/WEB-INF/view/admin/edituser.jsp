@@ -52,7 +52,7 @@
 
                             <div class="text-center mt-2">
                                 <br/>
-                                <button type="submit" class="btn btnpoly">수정</button>
+                                <button type="submit" class="btn btnpoly" onclick="updateUser()">수정</button>
                                 <button type="button" class="btn btnpoly" onclick="deleteUser()">삭제</button>
                             </div>
                     </form>
@@ -72,23 +72,53 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $.ajax({
-            url: "http://3.35.142.240/user-service/users/"+<%=uid%>,
+            url: "http://3.35.142.240/user-service/users/<%=uid%>",
             type: "get",
             dataType: "json",
             success: function (json) {
                 console.log(json);
-                // 회원정보 input창에 뿌려주기 (수정로직)
+                console.log("json.email;" + json.email);
+                var email = json.email;
+                var name = json.name;
+                var studentId = json.studentId;
+
+                $("#email").val(email);
+                $("#name").val(name);
+                $("#studentId").val(studentId);
             }
         })
     })
 
-    var email = "가져온 이메일";
-    var name = "가져온 이름";
-    var studentId = "가져온 학번";
+    function updateUser(){
+        let email = $("#email").val();
+        let name = $("#name").val();
+        let studentId = $("#studentId").val();
 
-    $('input[name=email]').attr('value', email);
-    $('input[name=studentId]').attr('value',studentId);
-    $('input[name=name]').attr('value',name);
+        console.log(email);
+        console.log(name);
+        console.log(studentId);
+
+        $.ajax({
+            type: "put",
+            url: "http://3.35.142.240/user-service/users/<%=uid%>",
+            dataType: "json",
+            contentType: "application/json",
+            data : JSON.stringify({
+                "email": email,
+                "name": name,
+                "studentId": studentId
+            }),
+            // success: function (json) {
+            //     console.log(json);
+            //     console.log("put 응답함.")
+            // }
+        })
+    }
+
+
+    // $('input[name=email]').attr('value', email);
+    // $('input[name=studentId]').attr('value',studentId);
+    // $('input[name=name]').attr('value',name);
 
     function deleteUser() {
         Swal.fire({
@@ -102,9 +132,10 @@
                 $.ajax({
                     // 회원아이디 가져와야함
                     // 회원수정 로직도 필요
-                    url: "http://poly-library.com/user-service/users/{userId}",
+                    url: "http://poly-library.com/user-service/users/<%=uid%>",
                     type: "post",
                     success: function (data) {
+                        console.log("삭제받아온 : " + data);
                         if (data == 1) {
                             Swal.fire({
                                 title : 'Polibrary',
@@ -123,7 +154,6 @@
             }
         })
     }
-    init();
 </script>
 
 </body>
